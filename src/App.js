@@ -3,11 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+  constructor(props) {
+    super(props)
+  }
+
+/*
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
@@ -18,10 +18,37 @@ class App extends Component {
             rel="noopener noreferrer"
           >
             Learn React
-          </a>
-        </header>
+          </a> */
+
+  render() {
+    const q = { body: 'body of some quote', author: 'D. Writer' }
+
+    return (
+      <div className="App">
+        <QuoteBox quote={q}/>    
       </div>
     );
+  } 
+}
+
+class QuoteBox extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    return (
+      <div id="quote-box">
+        <div id="text-container">
+          <div id="text">{this.props.quote.body}</div>
+          <div id="author">{this.props.quote.author}</div>
+        </div>
+        <div id="quote-box-footer">
+          <button id="tweet-quote">tweet</button>
+          <button id="new-quote">new quote</button>
+        </div>
+      </div>
+    )
   }
 }
 
