@@ -5,18 +5,32 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      index: Math.floor(Math.random() * 5)
+    }
+  }
+
+  handleClick = () => {
+    this.setState({
+      index: Math.floor(Math.random() * 5)
+    });
   }
 
   render() {
-    const q = { body: 'body of some quote', author: 'D. Writer' }
+    const q = [{ body: 'body of some quote', author: 'D. Writer' },
+               { body: 'second quote', author: 'e. Writer' },
+               { body: 'third quote', author: 'f. Writer' },
+               { body: 'fourth quote', author: 'g. Writer' },
+               { body: 'fifth quote', author: 'h. Writer' }];
 
     return (
       <div className="App">
-        <QuoteBox quote={q}/>    
+        <QuoteBox quote={q[this.state.index]} getIndex={this.handleClick}/>    
       </div>
     );
   } 
 }
+
 
 class QuoteBox extends Component {
   constructor(props) {
@@ -32,11 +46,11 @@ class QuoteBox extends Component {
         </div>
         <div id="quote-box-footer">
           <button id="tweet-quote">tweet</button>
-          <button id="new-quote">new quote</button>
+          <button id="new-quote" onClick={this.props.getIndex}>new quote</button>
         </div>
       </div>
     )
   }
-}
+} 
 
 export default App;
