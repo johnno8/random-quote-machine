@@ -17,15 +17,15 @@ class App extends Component {
   }
 
   render() {
-    const q = [{ body: 'body of some quote', author: 'D. Writer' },
-               { body: 'second quote', author: 'e. Writer' },
-               { body: 'third quote', author: 'f. Writer' },
-               { body: 'fourth quote', author: 'g. Writer' },
-               { body: 'fifth quote', author: 'h. Writer' }];
+    const quotes = [{ quote: 'body of some quote', author: 'D. Writer' },
+               { quote: 'second quote', author: 'e. Writer' },
+               { quote: 'third quote', author: 'f. Writer' },
+               { quote: 'fourth quote', author: 'g. Writer' },
+               { quote: 'fifth quote', author: 'h. writer' }];
 
     return (
       <div className="App">
-        <QuoteBox quote={q[this.state.index]} getIndex={this.handleClick}/>    
+        <QuoteBox q={quotes[this.state.index]} getIndex={this.handleClick}/>    
       </div>
     );
   } 
@@ -41,8 +41,8 @@ class QuoteBox extends Component {
     return (
       <div id="quote-box">
         <div id="text-container">
-          <div id="text">{this.props.quote.body}</div>
-          <div id="author">{this.props.quote.author}</div>
+          <div id="text">{this.props.q.quote}</div>
+          <div id="author">{this.props.q.author}</div>
         </div>
         <div id="quote-box-footer">
           <button id="tweet-quote">tweet</button>
