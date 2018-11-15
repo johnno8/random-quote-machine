@@ -6,6 +6,11 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      quotes: [{ quote: 'body of some quote', author: 'D. Writer' },
+               { quote: 'second quote', author: 'e. Writer' },
+               { quote: 'third quote', author: 'f. Writer' },
+               { quote: 'fourth quote', author: 'g. Writer' },
+               { quote: 'fifth quote', author: 'h. writer' }],
       index: Math.floor(Math.random() * 5)
     }
   }
@@ -17,15 +22,15 @@ class App extends Component {
   }
 
   render() {
-    const quotes = [{ quote: 'body of some quote', author: 'D. Writer' },
-               { quote: 'second quote', author: 'e. Writer' },
-               { quote: 'third quote', author: 'f. Writer' },
-               { quote: 'fourth quote', author: 'g. Writer' },
-               { quote: 'fifth quote', author: 'h. writer' }];
+    // const quotes = [{ quote: 'body of some quote', author: 'D. Writer' },
+    //            { quote: 'second quote', author: 'e. Writer' },
+    //            { quote: 'third quote', author: 'f. Writer' },
+    //            { quote: 'fourth quote', author: 'g. Writer' },
+    //            { quote: 'fifth quote', author: 'h. writer' }];
 
     return (
       <div className="App">
-        <QuoteBox q={quotes[this.state.index]} getIndex={this.handleClick}/>    
+        <QuoteBox q={this.state.quotes[this.state.index]} getIndex={this.handleClick}/>    
       </div>
     );
   } 
