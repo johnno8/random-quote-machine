@@ -23,7 +23,8 @@ class App extends Component {
       .then(response => response.json())
       .then(r => {
         this.setState({
-          quotes: r.quotes
+          quotes: r.quotes,
+          index: Math.floor(Math.random() * 102)
         });
       }).catch(err => console.log(err))
   }
