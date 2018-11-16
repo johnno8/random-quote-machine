@@ -6,27 +6,29 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      quotes: [{ quote: 'body of some quote', author: 'D. Writer' },
-               { quote: 'second quote', author: 'e. Writer' },
-               { quote: 'third quote', author: 'f. Writer' },
-               { quote: 'fourth quote', author: 'g. Writer' },
-               { quote: 'fifth quote', author: 'h. writer' }],
-      index: Math.floor(Math.random() * 5)
+      quotes: [{ quote: 'fetching quotes...', author: ''}],
+      index: 0
     }
   }
 
   handleClick = () => {
     this.setState({
-      index: Math.floor(Math.random() * 5)
+      index: Math.floor(Math.random() * 102)
     });
   }
 
+  componentDidMount() {
+    const quotesURL = "https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json" 
+    fetch(quotesURL)
+      .then(response => response.json())
+      .then(r => {
+        this.setState({
+          quotes: r.quotes
+        });
+      }).catch(err => console.log(err))
+  }
+
   render() {
-    // const quotes = [{ quote: 'body of some quote', author: 'D. Writer' },
-    //            { quote: 'second quote', author: 'e. Writer' },
-    //            { quote: 'third quote', author: 'f. Writer' },
-    //            { quote: 'fourth quote', author: 'g. Writer' },
-    //            { quote: 'fifth quote', author: 'h. writer' }];
 
     return (
       <div className="App">
