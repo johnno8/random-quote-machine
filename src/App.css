@@ -53,4 +53,11 @@
 #new-quote {
   margin-left: auto;
   margin-right: 5%;
+
+  background-color: orange;
+  width: 100px;
+  height: 30px;
+  color: white;
+  border-radius: 5px;
+  border: 0px solid;
 }
