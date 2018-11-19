@@ -49,8 +49,8 @@ class QuoteBox extends Component {
     return (
       <div id="quote-box">
         <div id="text-container">
-          <div id="text">{this.props.q.quote}</div>
-          <div id="author">{this.props.q.author}</div>
+          <div id="text">'{this.props.q.quote}'</div>
+          <div id="author">- {this.props.q.author}</div>
         </div>
         <div id="quote-box-footer">
           <button id="tweet-quote">tweet</button>
