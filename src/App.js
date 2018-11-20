@@ -46,6 +46,7 @@ class QuoteBox extends Component {
   }
 
   render() {
+    let tweetURL = 'https://twitter.com/intent/tweet?text="' + this.props.q.quote + '"' + ' - ' + this.props.q.author + '&hashtags=freecodecamp,randomquote';
     return (
       <div id="quote-box">
         <div id="text-container">
@@ -53,7 +54,7 @@ class QuoteBox extends Component {
           <div id="author">- {this.props.q.author}</div>
         </div>
         <div id="quote-box-footer">
-          <button id="tweet-quote">tweet</button>
+          <a href={tweetURL} id="tweet-quote" target="_blank">tweet</a>
           <button id="new-quote" onClick={this.props.getIndex}>new quote</button>
         </div>
       </div>
