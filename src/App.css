@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-color: orange;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -10,16 +9,10 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 #quote-box {
   width: 60%;
   height: auto;
   background-color: #f2f2f2;
-  /*color: #333333;*/
-  color: orange;
   border-radius: 3px;
   display: grid;
   grid-template-rows: auto 90px;
@@ -53,30 +46,22 @@
 }
 
 .tweet {
-/*  margin-left: 5%;
-  margin-bottom: 5%;*/
-  background-color: orange;
   width: 100px;
   height: 40px;
   color: white;
   border-radius: 5px;
   border: 0px solid;
-
-  /*font-weight: bold;*/
 }
 
 #new-quote {
   margin-left: auto;
   margin-right: 5%;
   margin-bottom: 5%;
-  background-color: orange;
   width: 100px;
   height: 40px;
   color: white;
   border-radius: 5px;
   border: 0px solid;
-
-  /*font-weight: bold;*/
 }
 
 a,
