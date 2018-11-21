@@ -35,8 +35,15 @@
   padding-bottom: 20px;
 }
 
+#text {
+  font-weight: bold;
+  font-size: calc(10px + 3vmin);
+}
+
 #author {
   justify-self: end;
+  padding-top: 10px;
+  font-size: calc(10px + 1.6vmin);
 }
 
 #quote-box-footer {
@@ -45,16 +52,17 @@
   align-items: center;
 }
 
-/*#tweet-quote {*/
-#tweet {
-  margin-left: 5%;
+.tweet {
+/*  margin-left: 5%;
+  margin-bottom: 5%;*/
   background-color: orange;
   width: 100px;
   height: 40px;
   color: white;
   border-radius: 5px;
   border: 0px solid;
-  margin-bottom: 5%;
+
+  /*font-weight: bold;*/
 }
 
 #new-quote {
@@ -67,10 +75,18 @@
   color: white;
   border-radius: 5px;
   border: 0px solid;
+
+  /*font-weight: bold;*/
 }
 
 a,
 a:visited,
 a:active {
   text-decoration: none;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+button:focus {
+  outline: none;
 }

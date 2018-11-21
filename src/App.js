@@ -54,8 +54,8 @@ class QuoteBox extends Component {
           <div id="author">- {this.props.q.author}</div>
         </div>
         <div id="quote-box-footer">
-          <a href={tweetURL} id="tweet-quote" target="_blank">tweet</a>
-          <button id="new-quote" onClick={this.props.getIndex}>new quote</button>
+          <a href={tweetURL} id="tweet-quote" target="_blank"><button class="tweet"><i className="fa fa-twitter"/> Tweet</button></a>
+          <button id="new-quote" onClick={this.props.getIndex}>New quote</button>
         </div>
       </div>
     )
