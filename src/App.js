@@ -15,20 +15,21 @@ class App extends Component {
   }
 
   handleClick = () => {
+
     this.setState({
-      index: Math.floor(Math.random() * 102),
+      index: Math.floor(Math.random() * 25),
       color: colors[Math.floor(Math.random() * 16)]
     });
   }
 
   componentDidMount() {
-    const quotesURL = "https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json" 
+    const quotesURL = "https://gist.githubusercontent.com/johnno8/455be897f86a71a8fbdbbd49855ba83b/raw/bc042f3b2ed4f26f1b4ad54dbb2c26a385e8a287/quotes.json" 
     fetch(quotesURL)
       .then(response => response.json())
       .then(r => {
         this.setState({
           quotes: r.quotes,
-          index: Math.floor(Math.random() * 102),
+          index: Math.floor(Math.random() * 25),
           color: colors[Math.floor(Math.random() * 6)]
         });
       }).catch(err => console.log(err))
@@ -36,7 +37,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App" style={{backgroundColor: this.state.color}}>
+      <div className="App" style={{background: this.state.color}}>
         <QuoteBox 
           q={this.state.quotes[this.state.index]} 
           getIndex={this.handleClick}
@@ -58,7 +59,7 @@ class QuoteBox extends Component {
       <div id="quote-box">
         <div id="text-container" style={{color: this.props.color}}>
           <div id="text">'{this.props.q.quote}'</div>
-          <div id="author">- {this.props.q.author}</div>
+          <div id="author">-{this.props.q.author}</div>
         </div>
         <div id="quote-box-footer">
           <a href={tweetURL} id="tweet-quote" target="_blank" rel="noopener noreferrer"><button className="tweet" style={{backgroundColor: this.props.color}}><i className="fa fa-twitter"/> Tweet</button></a>

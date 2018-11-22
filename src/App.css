@@ -7,6 +7,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
+  transition: background 1000ms linear;
 }
 
 #quote-box {
@@ -26,6 +28,8 @@
   height: auto;
   padding-top: 40px;
   padding-bottom: 20px;
+
+  transition: color 1000ms linear;
 }
 
 #text {
@@ -51,6 +55,8 @@
   color: white;
   border-radius: 5px;
   border: 0px solid;
+
+  transition: background 1000ms linear;
 }
 
 #new-quote {
@@ -62,6 +68,8 @@
   color: white;
   border-radius: 5px;
   border: 0px solid;
+
+  transition: background 1000ms linear;
 }
 
 a,
