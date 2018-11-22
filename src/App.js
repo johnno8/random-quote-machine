@@ -15,10 +15,25 @@ class App extends Component {
   }
 
   handleClick = () => {
+    let sameQuote = true;
+    let sameColour = true;
+    let newIndex;
+    let newColour;
+    //guard against displaying same quote twice in a row
+    while(sameQuote) {   
+      newIndex = Math.floor(Math.random() * 25);
+      sameQuote = (newIndex == this.state.index) ? true : false;     
+    }
+    //guard against displaying same colour twice in a row
+    while(sameColour) {
+      newColour = Math.floor(Math.random() * 16);
+      sameColour = (newColour == colors.indexOf(this.state.color)) ? true : false;
+    }
 
+    console.log('newIndex: ' + newIndex + ', newColour: ' + newColour);
     this.setState({
-      index: Math.floor(Math.random() * 25),
-      color: colors[Math.floor(Math.random() * 16)]
+      index: newIndex,
+      color: colors[newColour]
     });
   }
 
@@ -30,7 +45,7 @@ class App extends Component {
         this.setState({
           quotes: r.quotes,
           index: Math.floor(Math.random() * 25),
-          color: colors[Math.floor(Math.random() * 6)]
+          color: colors[Math.floor(Math.random() * 16)]
         });
       }).catch(err => console.log(err))
   }
