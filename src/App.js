@@ -38,7 +38,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const quotesURL = "https://gist.githubusercontent.com/johnno8/455be897f86a71a8fbdbbd49855ba83b/raw/bc042f3b2ed4f26f1b4ad54dbb2c26a385e8a287/quotes.json" 
+    const quotesURL = "https://gist.githubusercontent.com/johnno8/455be897f86a71a8fbdbbd49855ba83b/raw/ce5d6322e414ad6ce02620b7d42331be57bbc528/quotes.json" 
     fetch(quotesURL)
       .then(response => response.json())
       .then(r => {
