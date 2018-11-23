@@ -74,7 +74,7 @@ class QuoteBox extends Component {
       <div id="quote-box">
         <div id="text-container" style={{color: this.props.color}}>
           <div id="text">'{this.props.q.quote}'</div>
-          <div id="author">-{this.props.q.author}</div>
+          <div id="author">- {this.props.q.author}</div>
         </div>
         <div id="quote-box-footer">
           <a href={tweetURL} id="tweet-quote" target="_blank" rel="noopener noreferrer"><button className="tweet" style={{backgroundColor: this.props.color}}><i className="fa fa-twitter"/> Tweet</button></a>
